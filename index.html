@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConnectHub | Purpose-Driven Connections</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body id="top">
+    <div id="loader">Loading ConnectHub...</div>
+    <header class="navbar">
+      <h1 class="logo">
+        <a href="index.html" class="logo-wrap" aria-label="ConnectHub Home">
+          <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 120 120" role="img" aria-label="ConnectHub logo">
+            <defs>
+              <linearGradient id="chGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6366F1"/>
+                <stop offset="100%" stop-color="#06B6D4"/>
+              </linearGradient>
+
+              <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="2.2" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <circle cx="60" cy="60" r="50" fill="none" stroke="url(#chGrad)" stroke-width="6" opacity="0.95"/>
+            <circle cx="60" cy="60" r="40" fill="#0b0d12" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+
+            <g stroke="url(#chGrad)" stroke-width="4" stroke-linecap="round" filter="url(#softGlow)">
+              <line x1="44" y1="66" x2="60" y2="46"/>
+              <line x1="60" y1="46" x2="78" y2="62"/>
+              <line x1="44" y1="66" x2="78" y2="62"/>
+            </g>
+
+            <g filter="url(#softGlow)">
+              <circle cx="60" cy="46" r="6" fill="#ffffff"/>
+              <circle cx="44" cy="66" r="6" fill="#ffffff"/>
+              <circle cx="78" cy="62" r="6" fill="#ffffff"/>
+
+              <circle cx="58" cy="44" r="1.2" fill="#0b0d12" opacity="0.55"/>
+              <circle cx="42" cy="64" r="1.2" fill="#0b0d12" opacity="0.55"/>
+              <circle cx="76" cy="60" r="1.2" fill="#0b0d12" opacity="0.55"/>
+            </g>
+
+            <text x="60" y="92" text-anchor="middle"
+                  font-size="14"
+                  font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial"
+                  font-weight="800"
+                  fill="#e5e7eb"
+                  letter-spacing="1">CH</text>
+          </svg>
+
+          <span class="logo-text">ConnectHub</span>
+        </a>
+      </h1>
+
+      <nav class="nav-links">
+        <a class="active" href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="explore.html">Explore</a>
+        <a href="contact.html">Contact</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="login.html">Login</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <h2>Meaningful Connections.<br /><span>Clear Intent.</span></h2>
+        <p>
+          A purpose-driven platform to connect people through academics,
+          support, growth, and long-term intent.
+        </p>
+        <a href="#services" class="btn"><span>Explore Purposes</span></a>
+      </div>
+    </section>
+
+    <section id="services" class="container">
+      <header class="section-head">
+        <h2 class="section-title">Choose Your <span class="gradient-shimmer">Purpose</span></h2>
+        <p class="section-subtitle">
+          Pick a connection type that matches your intent.
+        </p>
+      </header>
+
+      <div class="purpose-image-grid">
+        <a href="#form" class="purpose-card-img" data-purpose="Study Partner">
+          <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b" alt="Study Partner" />
+          <span>Study Partner</span>
+        </a>
+
+        <a href="#form" class="purpose-card-img" data-purpose="Project Collaboration">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Project Collaboration" />
+          <span>Project Collaboration</span>
+        </a>
+
+        <a href="#form" class="purpose-card-img" data-purpose="Friendship">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" alt="Friendship" />
+          <span>Friendship</span>
+        </a>
+
+        <a href="#form" class="purpose-card-img" data-purpose="Emotional Support">
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9" alt="Emotional Support" />
+          <span>Emotional Support</span>
+        </a>
+
+        <a href="#form" class="purpose-card-img" data-purpose="Career Mentorship">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df" alt="Career Mentorship" />
+          <span>Career Mentorship</span>
+        </a>
+
+        <a href="#form" class="purpose-card-img" data-purpose="Networking & Communities">
+          <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe" alt="Networking & Communities" />
+          <span>Networking &amp; Communities</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="form" class="container">
+      <header class="section-head">
+        <h2 class="section-title">Join the <span class="gradient-shimmer">Community</span></h2>
+        <p class="section-subtitle">
+          Start here — explore purposes next.
+        </p>
+      </header>
+
+      <div class="join-layout">
+        <aside class="join-info glass">
+          <h3>Why Join?</h3>
+          <p>
+            ConnectHub helps people connect based on clear intent and respectful interaction.
+          </p>
+
+          <div class="why-columns">
+            <p>
+              The platform supports multiple connection types including academics,
+              project collaboration, emotional support, and professional mentorship.
+              It is designed to reduce confusion, improve match quality, and ensure
+              meaningful interactions.
+            </p>
+          </div>
+
+          <ul class="checklist">
+            <li>Purpose-based connections</li>
+            <li>Privacy-first approach</li>
+            <li>Community guidelines enforced</li>
+            <li>Clean and simple experience</li>
+          </ul>
+        </aside>
+
+        <article class="join-form glass">
+          <form
+            id="joinForm"
+            class="form-grid"
+            autocomplete="on"
+            action="explore.html"
+            method="get"
+            novalidate
+          >
+            <div class="field">
+              <label for="fullname">Full Name <span class="req">*</span></label>
+              <input
+                id="fullname"
+                name="fullname"
+                type="text"
+                placeholder="Your full name"
+                required
+                minlength="2"
+                maxlength="50"
+                pattern="^[A-Za-z][A-Za-z\s.'-]{1,49}$"
+              />
+              <small class="error" id="fullnameError"></small>
+            </div>
+
+            <div class="field">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                required
+              />
+              <small class="error" id="emailError"></small>
+            </div>
+
+            <div class="field">
+              <label for="purpose">Primary Purpose <span class="req">*</span></label>
+              <select id="purpose" name="purpose" required>
+                <option value="" disabled selected>Select a purpose</option>
+                <option>Study Partner</option>
+                <option>Project Collaboration</option>
+                <option>Friendship</option>
+                <option>Emotional Support</option>
+                <option>Career Mentorship</option>
+                <option>Networking &amp; Communities</option>
+              </select>
+              <small class="error" id="purposeError"></small>
+            </div>
+
+            <div class="field checkbox">
+              <input id="agree" name="agree" type="checkbox" required />
+              <label for="agree">
+                I agree to the Community Guidelines <span class="req">*</span>
+              </label>
+              <small class="error" id="agreeError"></small>
+            </div>
+
+            <button type="submit" class="btn btn-solid">Continue</button>
+
+            <p class="muted-note">
+              You’ll be taken to explore purposes next.
+            </p>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <a class="back-to-top" href="#top">↑</a>
+
+    <footer class="footer">
+      <p>© 2026 ConnectHub · Meaningful Connections</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <div id="toast"></div>
+  </body>
+</html>

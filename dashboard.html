@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | ConnectHub</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body class="dashboard-body">
+
+<!-- 🔥 SIDEBAR -->
+<aside class="sidebar">
+  <h2 class="logo-text">ConnectHub</h2>
+
+  <nav>
+    <a class="active" href="#"> Dashboard</a>
+    <a href="explore.html"> Explore</a>
+    <a href="contact.html"> Contact</a>
+    <a href="index.html"> Home</a>
+    <a href="about.html"> About</a>
+    <a href="login.html"> Login</a>
+  </nav>
+
+  <button id="logoutBtn" class="btn btn-small">Logout</button>
+</aside>
+
+<!-- 🔥 MAIN CONTENT -->
+<main class="main">
+
+  <!-- USER HEADER -->
+  <div class="dashboard-header glass">
+    <h1 id="welcomeText">Welcome</h1>
+    <p id="userEmail"></p>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-card">
+      <h3>📅 Last Login</h3>
+      <p id="lastLogin">—</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>🔑 Total Logins</h3>
+      <p id="loginCount">0</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>⭐ Saved Profiles</h3>
+      <p id="savedCount">0</p>
+    </div>
+  </div>
+
+  <!-- SAVED USERS -->
+  <div class="glass saved-box">
+    <h2>⭐ Saved Profiles</h2>
+    <div id="savedList"></div>
+  </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

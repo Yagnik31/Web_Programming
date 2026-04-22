@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | ConnectHub</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+
+    <style>
+      #map {
+        width: 100%;
+        height: 360px;
+        border-radius: 18px;
+      }
+
+      .map-toolbar {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+
+      .map-hint {
+        margin-top: 0.9rem;
+        color: #9ca3af;
+        font-size: 0.92rem;
+      }
+
+      .hq-marker {
+        width: 42px;
+        height: 42px;
+        background: linear-gradient(135deg, #6366f1, #06b6d4);
+        border: 3px solid #ffffff;
+        border-radius: 50% 50% 50% 0;
+        transform: rotate(-45deg);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+        position: relative;
+      }
+
+      .hq-marker::after {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background: #ffffff;
+        border-radius: 50%;
+        top: 10px;
+        left: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="loader">Loading ConnectHub...</div>
+    <header class="navbar">
+      <h1 class="logo">
+        <a href="index.html" class="logo-wrap" aria-label="ConnectHub Home">
+          <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 120 120" role="img" aria-label="ConnectHub logo">
+            <defs>
+              <linearGradient id="chGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6366F1"/>
+                <stop offset="100%" stop-color="#06B6D4"/>
+              </linearGradient>
+
+              <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="2.2" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <circle cx="60" cy="60" r="50" fill="none" stroke="url(#chGrad)" stroke-width="6" opacity="0.95"/>
+            <circle cx="60" cy="60" r="40" fill="#0b0d12" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+
+            <g stroke="url(#chGrad)" stroke-width="4" stroke-linecap="round" filter="url(#softGlow)">
+              <line x1="44" y1="66" x2="60" y2="46"/>
+              <line x1="60" y1="46" x2="78" y2="62"/>
+              <line x1="44" y1="66" x2="78" y2="62"/>
+            </g>
+
+            <g filter="url(#softGlow)">
+              <circle cx="60" cy="46" r="6" fill="#ffffff"/>
+              <circle cx="44" cy="66" r="6" fill="#ffffff"/>
+              <circle cx="78" cy="62" r="6" fill="#ffffff"/>
+
+              <circle cx="58" cy="44" r="1.2" fill="#0b0d12" opacity="0.55"/>
+              <circle cx="42" cy="64" r="1.2" fill="#0b0d12" opacity="0.55"/>
+              <circle cx="76" cy="60" r="1.2" fill="#0b0d12" opacity="0.55"/>
+            </g>
+
+            <text x="60" y="92" text-anchor="middle"
+                  font-size="14"
+                  font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial"
+                  font-weight="800"
+                  fill="#e5e7eb"
+                  letter-spacing="1">CH</text>
+          </svg>
+
+          <span class="logo-text">ConnectHub</span>
+        </a>
+      </h1>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="explore.html">Explore</a>
+        <a class="active" href="contact.html" aria-current="page">Contact</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="login.html">Login</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </header>
+
+    <section class="hero hero-small">
+      <div class="hero-inner">
+        <h2>Get in <span>Touch</span></h2>
+        <p>For feedback, doubts, or suggestions related to this.</p>
+        <a href="index.html" class="btn">Back to Home</a>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="contact-layout">
+        <aside class="glass contact-info">
+          <h3>Contact Info</h3>
+          <p><strong>Email:</strong> support@connecthub.edu</p>
+          <p><strong>Company Type:</strong> Mutual Connections</p>
+          <p><strong>Working Hours:</strong> 10:00 AM – 6:00 PM</p>
+          <p class="muted-note">
+  We usually respond within 24 hours.
+</p>
+        </aside>
+
+        <article class="glass contact-form">
+          <h3>Office Headquarters</h3>
+
+          <div id="map" aria-label="Map showing office headquarters"></div>
+
+          <div class="map-toolbar">
+            <button type="button" class="btn btn-solid" id="showHqBtn">
+              Show Headquarters
+            </button>
+            <button type="button" class="btn btn-solid" id="resetBtn">
+              Reset Map
+            </button>
+          </div>
+
+          <p class="map-hint" id="statusText">
+            Click “Show Headquarters” to view the office location.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 ConnectHub · Meaningful Connections</p>
+    </footer>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="script.js"></script>
+    <div id="toast"></div>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | ConnectHub</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="loader">Loading ConnectHub...</div>
+    <header class="navbar">
+      <h1 class="logo">
+        <a href="index.html" class="logo-wrap" aria-label="ConnectHub Home">
+          <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 120 120" role="img" aria-label="ConnectHub logo">
+            <defs>
+              <linearGradient id="chGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6366F1"/>
+                <stop offset="100%" stop-color="#06B6D4"/>
+              </linearGradient>
+
+              <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="2.2" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <circle cx="60" cy="60" r="50" fill="none" stroke="url(#chGrad)" stroke-width="6" opacity="0.95"/>
+            <circle cx="60" cy="60" r="40" fill="#0b0d12" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+
+            <g stroke="url(#chGrad)" stroke-width="4" stroke-linecap="round" filter="url(#softGlow)">
+              <line x1="44" y1="66" x2="60" y2="46"/>
+              <line x1="60" y1="46" x2="78" y2="62"/>
+              <line x1="44" y1="66" x2="78" y2="62"/>
+            </g>
+
+            <g filter="url(#softGlow)">
+              <circle cx="60" cy="46" r="6" fill="#ffffff"/>
+              <circle cx="44" cy="66" r="6" fill="#ffffff"/>
+              <circle cx="78" cy="62" r="6" fill="#ffffff"/>
+
+              <circle cx="58" cy="44" r="1.2" fill="#0b0d12" opacity="0.55"/>
+              <circle cx="42" cy="64" r="1.2" fill="#0b0d12" opacity="0.55"/>
+              <circle cx="76" cy="60" r="1.2" fill="#0b0d12" opacity="0.55"/>
+            </g>
+
+            <text x="60" y="92" text-anchor="middle"
+                  font-size="14"
+                  font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial"
+                  font-weight="800"
+                  fill="#e5e7eb"
+                  letter-spacing="1">CH</text>
+          </svg>
+
+          <span class="logo-text">ConnectHub</span>
+        </a>
+      </h1>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="explore.html">Explore</a>
+        <a href="contact.html">Contact</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a class="active" href="login.html" aria-current="page">Login</a>
+      </nav>
+    </header>
+
+    <section class="hero hero-small">
+      <div class="hero-inner">
+        <h2>Welcome <span>Back</span></h2>
+        <a href="signup.html" class="btn">New here? Sign Up</a>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="glass auth-wrap">
+        <h3 class="auth-title">Login</h3>
+
+        <form
+          id="loginForm"
+          class="form-grid"
+          autocomplete="on"
+          novalidate
+        >
+          <div class="field">
+            <label for="li_email">Email</label>
+            <input
+              id="li_email"
+              name="email"
+              type="email"
+              required
+              placeholder="you@example.com"
+            />
+            <small class="error" id="liEmailError"></small>
+          </div>
+
+          <div class="field">
+  <label for="li_password">Password</label>
+
+  <div class="password-wrap">
+    <input
+      id="li_password"
+      name="password"
+      type="password"
+      required
+      placeholder="Min 8 chars + 1 special"
+      minlength="8"
+      pattern="^(?=.*[^A-Za-z0-9]).{8,}$"
+      title="Password must be at least 8 characters and contain at least 1 special character."
+    />
+    <span onclick="togglePassword('li_password')">👁</span>
+  </div>
+
+  <small class="error" id="liPasswordError"></small>
+</div>
+
+          <button type="submit" class="btn btn-solid">Login</button>
+
+          <p class="muted-note" id="loginStatus">
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 ConnectHub · Meaningful Connections</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <div id="toast"></div>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | ConnectHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<header class="navbar">
+  <h1 class="logo">
+  <a href="index.html" class="logo-wrap" aria-label="ConnectHub Home">
+    <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 120 120" role="img" aria-label="ConnectHub logo">
+      <defs>
+        <linearGradient id="chGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#6366F1"/>
+          <stop offset="100%" stop-color="#06B6D4"/>
+        </linearGradient>
+
+        <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="2.2" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+
+      <circle cx="60" cy="60" r="50" fill="none" stroke="url(#chGrad)" stroke-width="6" opacity="0.95"/>
+      <circle cx="60" cy="60" r="40" fill="#0b0d12" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+
+      <g stroke="url(#chGrad)" stroke-width="4" stroke-linecap="round" filter="url(#softGlow)">
+        <line x1="44" y1="66" x2="60" y2="46"/>
+        <line x1="60" y1="46" x2="78" y2="62"/>
+        <line x1="44" y1="66" x2="78" y2="62"/>
+      </g>
+
+      <g filter="url(#softGlow)">
+        <circle cx="60" cy="46" r="6" fill="#ffffff"/>
+        <circle cx="44" cy="66" r="6" fill="#ffffff"/>
+        <circle cx="78" cy="62" r="6" fill="#ffffff"/>
+
+        <circle cx="58" cy="44" r="1.2" fill="#0b0d12" opacity="0.55"/>
+        <circle cx="42" cy="64" r="1.2" fill="#0b0d12" opacity="0.55"/>
+        <circle cx="76" cy="60" r="1.2" fill="#0b0d12" opacity="0.55"/>
+      </g>
+
+      <text x="60" y="92" text-anchor="middle"
+            font-size="14"
+            font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial"
+            font-weight="800"
+            fill="#e5e7eb"
+            letter-spacing="1">CH</text>
+    </svg>
+
+    <span class="logo-text">ConnectHub</span>
+  </a>
+</h1>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+   <a class="active" href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="signup.html">Sign Up</a>
+    <a href="login.html">Login</a>
+    <a href="dashboard.html">Dashboard</a>
+  </nav>
+</header>
+
+<section class="hero hero-small">
+  <div class="hero-inner">
+    <h2>About <span>ConnectHub</span></h2>
+    <p>A purpose-driven platform designed for meaningful and respectful connections.</p>
+    <a href="explore.html" class="btn">Explore Purposes</a>
+  </div>
+</section>
+
+<section class="container">
+  <div class="about-grid">
+    <article class="glass about-card">
+      <h3>Problem</h3>
+      <p>
+        Many social platforms promote random or unclear matching. This often leads to
+        low-quality interactions and confusion about user intent.
+      </p>
+    </article>
+
+    <article class="glass about-card">
+      <h3>Solution</h3>
+      <p>
+        ConnectHub organizes connections by clear purpose such as academics,
+        emotional support, professional growth, and long-term intent.
+      </p>
+    </article>
+
+    <article class="glass about-card">
+      <h3>Objectives</h3>
+      <ul class="bullets">
+        <li>Provide clarity through intent-based connection categories</li>
+        <li>Promote respectful and safe interaction</li>
+        <li>Design a modern UI using HTML and CSS</li>
+        <li>Present information clearly using forms and tables</li>
+      </ul>
+    </article>
+
+    <article class="glass about-card">
+      <h3>Technology Used</h3>
+      <ul class="bullets">
+        <li>HTML5 (semantic structure)</li>
+        <li>CSS3 (grid, layout, glassmorphism)</li>
+        <li>Responsive design for mobile and desktop</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 ConnectHub · Meaningful Connections</p>
+</footer>
+<div id="toast"></div>
+</body>
+</html>
